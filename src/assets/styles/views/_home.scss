@@ -9,6 +9,44 @@
   }
   .about {
     max-width: 600px;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    .about-header {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    .about-body {
+      font-size: 22px;
+      // font-weight: 600;
+      margin-bottom: 60px;
+      display: inline-block;
+    }
+    .social-conteiner {
+      .social-container-header {
+        text-align: center;
+      }
+      .social-links {
+        display: flex;
+        gap: 20px;
+        font-size: 46px;
+      }
+      .social-links a {
+        text-decoration: none;
+        color: black;
+        display: inline-block;
+      }
+      .portfolio-link {
+        cursor: pointer;
+
+        .portfolio-text {
+          font-size: 30px;
+        }
+      }
+    }
   }
   .categories {
     display: grid;
@@ -21,7 +59,7 @@
   // @media only screen and (max-width: 500px) {
   //   grid-template-columns: repeat(auto-fit, max(300px));
   //   width: 70%;
-  
+
   // }
   @media only screen and (max-width: 900px) {
     grid-template-columns: repeat(auto-fit, max(500px));

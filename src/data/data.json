@@ -8,7 +8,8 @@
   "sizes":["s","m","xxl"],
   "img":"https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/SearchAlt/224x336/724855.jpg",
   "fit":["slim","loose"],
-  "colors":["green","yellow","blue"]
+  "colors":["green","yellow","blue"],
+  "lables":["man","wide","loose"]
 },
   {
   "_id":"2",
@@ -18,7 +19,9 @@
   "sizes":["s","m","xxl"],
   "img":"https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/Search/224x336/M47191.jpg",
   "fit":["slim","loose"],
-  "colors":["green","white"]
+  "colors":["green","white"],
+  "lables":["man","wide","loose"]
+
 },
   {
   "_id":"3",
@@ -28,7 +31,8 @@
   "sizes":["s","m","xxl"],
   "img":"https://xcdn.next.co.uk/COMMON/Items/Default/Default/Publications/G75/shotview/2303/U68-501s.jpg",
   "fit":["slim","loose"],
-  "colors":["green","yellow"]
+  "colors":["green","yellow"],
+  "lables":["man","wide","loose"]
 },
   {
   "_id":"4",
@@ -38,7 +42,8 @@
   "sizes":["s","m","xxl"],
   "img":"https://xcdn.next.co.uk/COMMON/Items/Default/Default/ItemImages/AltItemShot/315x472/U55488s.jpg",
   "fit":["slim","loose"],
-  "colors":["green","yellow"]
+  "colors":["green","yellow"],
+  "lables":["man","wide","loose"]
 },
   {
   "_id":"5",
@@ -48,7 +53,8 @@
   "sizes":["s","m","xxl"],
   "img":"https://xcdn.next.co.uk/COMMON/Items/Default/Default/ItemImages/AltItemShot/315x472/T82822s.jpg",
   "fit":["slim","loose"],
-  "colors":["green","yellow"]
+  "colors":["green","yellow"],
+  "lables":["man","wide","loose"]
 },
   {
   "_id":"6",
@@ -58,7 +64,8 @@
   "sizes":["s","m","xxl"],
   "img":"https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/SearchAlt/224x336/724855.jpg",
   "fit":["slim","loose"],
-  "colors":["green","yellow","blue"]
+  "colors":["green","yellow","blue"],
+  "lables":["man","wide","loose"]
 },
   {
   "_id":"7",
@@ -68,7 +75,8 @@
   "sizes":["s","m","xxl"],
   "img":"https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/Search/224x336/M47191.jpg",
   "fit":["slim","loose"],
-  "colors":["green","white"]
+  "colors":["green","white"],
+  "lables":["man","wide","loose"]
 },
   {
   "_id":"8",
@@ -78,7 +86,8 @@
   "sizes":["s","m","xxl"],
   "img":"https://xcdn.next.co.uk/COMMON/Items/Default/Default/Publications/G75/shotview/2303/U68-501s.jpg",
   "fit":["slim","loose"],
-  "colors":["green","yellow"]
+  "colors":["green","yellow"],
+  "lables":["man","wide","loose"]
 },
   {
   "_id":"9",
@@ -88,7 +97,8 @@
   "sizes":["s","m","xxl"],
   "img":"https://xcdn.next.co.uk/COMMON/Items/Default/Default/ItemImages/AltItemShot/315x472/U55488s.jpg",
   "fit":["slim","loose"],
-  "colors":["green","yellow"]
+  "colors":["green","yellow"],
+  "lables":["man","wide","loose"]
 },
   {
   "_id":"10",
@@ -98,7 +108,8 @@
   "sizes":["s","m","xxl"],
   "img":"https://xcdn.next.co.uk/COMMON/Items/Default/Default/ItemImages/AltItemShot/315x472/T82822s.jpg",
   "fit":["slim","loose"],
-  "colors":["green","yellow"]
+  "colors":["green","yellow"],
+  "lables":["man","wide","loose"]
 },
   {
   "_id":"11",
@@ -108,7 +119,8 @@
   "sizes":["s","m","xxl"],
   "img":"https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/SearchAlt/224x336/724855.jpg",
   "fit":["slim","loose"],
-  "colors":["green","yellow","blue"]
+  "colors":["green","yellow","blue"],
+  "lables":["man","wide","loose"]
 },
   {
   "_id":"12",
@@ -118,7 +130,8 @@
   "sizes":["s","m","xxl"],
   "img":"https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/Search/224x336/M47191.jpg",
   "fit":["slim","loose"],
-  "colors":["green","white"]
+  "colors":["green","white"],
+  "lables":["man","wide","loose"]
 },
   {
   "_id":"13",
@@ -128,7 +141,8 @@
   "sizes":["s","m","xxl"],
   "img":"https://xcdn.next.co.uk/COMMON/Items/Default/Default/Publications/G75/shotview/2303/U68-501s.jpg",
   "fit":["slim","loose"],
-  "colors":["green","yellow"]
+  "colors":["green","yellow"],
+  "lables":["man","wide","loose"]
 },
   {
   "_id":"14",
@@ -138,7 +152,8 @@
   "sizes":["s","m","xxl"],
   "img":"https://xcdn.next.co.uk/COMMON/Items/Default/Default/ItemImages/AltItemShot/315x472/U55488s.jpg",
   "fit":["slim","loose"],
-  "colors":["green","yellow"]
+  "colors":["green","yellow"],
+  "lables":["man","wide","loose"]
 },
   {
   "_id":"15",
@@ -148,7 +163,8 @@
   "sizes":["s","m","xxl"],
   "img":"https://xcdn.next.co.uk/COMMON/Items/Default/Default/ItemImages/AltItemShot/315x472/T82822s.jpg",
   "fit":["slim","loose"],
-  "colors":["green","yellow"]
+  "colors":["green","yellow"],
+  "lables":["man","wide","loose"]
 },
   {
   "_id":"16",
@@ -158,7 +174,8 @@
   "sizes":["s","m","xxl"],
   "img":"https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/SearchAlt/224x336/724855.jpg",
   "fit":["slim","loose"],
-  "colors":["green","yellow","blue"]
+  "colors":["green","yellow","blue"],
+  "lables":["man","wide","loose"]
 },
   {
   "_id":"17",
@@ -168,7 +185,8 @@
   "sizes":["s","m","xxl"],
   "img":"https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/Search/224x336/M47191.jpg",
   "fit":["slim","loose"],
-  "colors":["green","white"]
+  "colors":["green","white"],
+  "lables":["man","wide","loose"]
 },
   {
   "_id":"18",
@@ -178,7 +196,8 @@
   "sizes":["s","m","xxl"],
   "img":"https://xcdn.next.co.uk/COMMON/Items/Default/Default/Publications/G75/shotview/2303/U68-501s.jpg",
   "fit":["slim","loose"],
-  "colors":["green","yellow"]
+  "colors":["green","yellow"],
+  "lables":["man","wide","loose"]
 },
   {
   "_id":"19",
@@ -188,7 +207,8 @@
   "sizes":["s","m","xxl"],
   "img":"https://xcdn.next.co.uk/COMMON/Items/Default/Default/ItemImages/AltItemShot/315x472/U55488s.jpg",
   "fit":["slim","loose"],
-  "colors":["green","yellow"]
+  "colors":["green","yellow"],
+  "lables":["man","wide","loose"]
 },
   {
   "_id":"20",
@@ -198,7 +218,8 @@
   "sizes":["s","m","xxl"],
   "img":"https://xcdn.next.co.uk/COMMON/Items/Default/Default/ItemImages/AltItemShot/315x472/T82822s.jpg",
   "fit":["slim","loose"],
-  "colors":["green","yellow"]
+  "colors":["green","yellow"],
+  "lables":["man","wide","loose"]
 },
   {
   "_id":"6",
@@ -208,6 +229,7 @@
   "sizes":["s","m","xxl"],
   "img":"https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/SearchAlt/224x336/265210.jpg",
   "fit":["slim","loose"],
-  "colors":["green","yellow"]
+  "colors":["green","yellow"],
+  "lables":["man","wide","loose"]
 }
 ]

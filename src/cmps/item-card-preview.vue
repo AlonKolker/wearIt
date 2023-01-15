@@ -4,9 +4,11 @@
     <span class="item-title">{{item.title}}</span>
     <!-- <span class="item-title">{{item.title}}</span> -->
     <div class="item-preview-content">
-      <div class="item-lables">
-        <span class="item-lable">{{item.category}}</span>
-        <span class="item-lable">Man</span>
+      <div class="item-lables" v-for="lable in item.lables">
+
+        <span class="item-lable" >{{lable}}</span>
+        <!-- <span class="item-lable">{{item.category}}</span> -->
+        <!-- <span class="item-lable">Man</span> -->
       </div>
       <span class="item-price">{{item.price}}$</span>
     </div>

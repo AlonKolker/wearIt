@@ -5,6 +5,7 @@ export const shopStore = {
     cloths: [],
     bag: [],
     bagTotalPrice: 0,
+    currUser:null,
     filter: "",
   },
   category: "shirts",
@@ -28,6 +29,9 @@ export const shopStore = {
     totalPrice({ bagTotalPrice }) {
       return bagTotalPrice
     },
+    currUser({ currUser }) {
+      return currUser
+    },
   },
   mutations: {
     setCloths(state, { cloths }) {
@@ -48,7 +52,10 @@ export const shopStore = {
       bag = bag.filter((item) => item.bagId !== bagId)
       state.bag = bag
     },
-
+    setCurrUser(state, { currUser }) {
+      state.currUser = currUser
+      console.log(state.currUser);
+    },
     setFilter(state, { text }) {
       state.filter = text
     },
@@ -69,13 +76,16 @@ export const shopStore = {
       // console.log(item)
       commit({ type: "updateBag", item })
     },
-    removeBagItem({ commit }, { bagId }) {
-      // console.log(itemId)
-      commit({ type: "removeBagItem", bagId })
+    setCurrUser({ commit }, { currUser }) {
+      commit({ type: "setCurrUser", currUser })
     },
 
     setFilter({ commit }, { text }) {
       commit({ type: "setFilter", text })
+    },
+        removeBagItem({ commit }, { bagId }) {
+      // console.log(itemId)
+      commit({ type: "removeBagItem", bagId })
     },
   },
 }

@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+
   cursor: pointer;
   &:hover {
     .item-preview-content {
@@ -11,7 +12,6 @@
       display: block;
       transition: 0.6s;
       height: 60px;
-
     }
   }
   .text {
@@ -25,21 +25,21 @@
     font-size: 16px;
     font-weight: 600;
     flex-grow: 1;
-
   }
   .item-preview-content {
     display: flex;
     // flex-direction: column;
     padding: 12px;
     justify-content: space-between;
+    align-items: center;
     height: 60px;
     .item-lables {
       display: flex;
       flex-wrap: wrap;
       gap: 5px;
       .item-lable {
-        background-color: red;
-        border-radius: 12px;
+        background-color: #ced4da;
+        border-radius: 3px;
         padding: 3px 9px;
         font-weight: 600;
         color: rgb(69, 68, 68);

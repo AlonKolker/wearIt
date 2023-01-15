@@ -16,10 +16,10 @@
 </template>
 
 <script>
-import img1 from "../assets/image/cover2.jpg"
+import img1 from "../assets/image/longshirt1.jpg"
 import img2 from "../assets/image/cover2.jpg"
-import img3 from "../assets/image/cover2.jpg"
-import img4 from "../assets/image/cover2.jpg"
+import img3 from "../assets/image/tshirt1.jpg"
+import img4 from "../assets/image/shoes.jpg"
 
 export default {
   name: "item-card-list",

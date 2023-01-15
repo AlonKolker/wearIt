@@ -2,7 +2,7 @@
   <section class="header-conteiner-background">
     <div class="main-layout">
       <header class="main-layout header-conteiner">
-        <router-link class="logo"  to="/">Next</router-link>
+        <router-link class="logo"  to="/">Wear-It</router-link>
         <!-- <div class="logo">Next</div> -->
         <div class="navigation-box">
           <nav class="nav" :class="{ show: isActive, hide: !isActive }">

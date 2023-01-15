@@ -1,7 +1,7 @@
 <template>
   <section @click="openCategory()" class="card">
-    <img src="https://xcdn.next.co.uk/COMMON/Items/Default/Default/Publications/G64/shotview/2085/620-626s.jpg" alt="" />
-    <div class="card-title">{{category}}</div>
+    <img :src="'src/assets/image/' + category + '.jpg'" alt="" />
+    <div class="card-title">{{ category }}</div>
     <span class="line"></span>
   </section>
 </template>
@@ -13,14 +13,19 @@ export default {
     category: {
       type: String,
     },
+   
   },
-  created() {},
+  created() {
+    console.log(this.url)
+  },
   methods: {
     openCategory() {
       this.$router.push(`/${this.category}`)
     },
   },
-  computed: {},
+  computed: {
+   
+  },
   emits: [""],
 }
 </script>

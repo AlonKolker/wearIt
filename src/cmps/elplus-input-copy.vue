@@ -13,12 +13,16 @@
       <el-option v-for="(size, idx) in item.sizes" :key="idx" :color="size" :value="size" />
     </el-select>
 
-    <el-button @click="onAddToBag" type="success">Add to bag</el-button>
+    <el-button v-if="currUser" @click="onAddToBag" type="success">Add to bag</el-button>
+      <el-button v-else type="success" @click="openMsg">Add to bag</el-button>
+
   </section>
 </template>
 
 <script>
 import {shopService} from '../services/shop.service'
+import { ElMessage, ElMessageBox } from 'element-plus'
+
 export default {
   name: "",
   data() {
@@ -32,6 +36,7 @@ export default {
   created() {},
   methods: {
     onAddToBag() {
+
       let currItem = {
         bagId:shopService.makeId(),
         id: this.item._id,
@@ -43,8 +48,39 @@ export default {
       }
       this.$store.dispatch({ type: "setBag", item:currItem })
     },
+    openMsg(){
+      ElMessageBox.confirm(
+    'You can Add to bag, but for checkout you will need to log in. Do you want to do it now?',
+    {
+      confirmButtonText: 'OK',
+      cancelButtonText: 'Cancel',
+      type: 'warning',
+    }
+  )
+    .then(() => {
+      ElMessage({
+        type: 'success',
+        message: 'Wear it out 😎',
+      })
+            this.$router.push('/login')
+
+    })
+    .catch(() => {
+      this.onAddToBag()
+      ElMessage({
+        type: 'info',
+        message: 'Continue as a Guest',
+      })
+    })
+}
+    },
+  computed: {
+    currUser(){
+      console.log(this.$store.getters.currUser);
+      return this.$store.getters.currUser
+
+    }
   },
-  computed: {},
   emits: [""],
   components: {},
 }

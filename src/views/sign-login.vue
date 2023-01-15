@@ -14,8 +14,8 @@
         </el-form-item>
         <div v-if="missingField">Please Fill the empty fields</div>
       </el-form>
-      <el-button v-if="isLogin" @click="onLogIn" type="primary">Login</el-button>
-      <el-button v-else type="primary">Register</el-button>
+      <el-button v-if="isLogin" @click="onLogIn" :disabled="!user.name || !user.passWord" :title="check" type="primary">Login</el-button>
+      <el-button v-else  :disabled="!user.name || !user.passWord || !user.email " type="primary">Register</el-button>
     </div>
     <span v-if="isLogin">Dont have an account? <button @click="isLogin = !isLogin">Register!</button></span>
     <span v-else>Have an account? <button @click="isLogin = !isLogin">Login!</button></span>
@@ -38,7 +38,10 @@ export default {
       missingField: false,
     }
   },
-  computed: {},
+  computed: {check(){
+    if(!this.user.name || !this.user.passWord) return 'Please fill the missing fields'
+     return 'Enter'
+  }},
   methods: {
     onLogIn() {
       console.log('onLogIn',this.user)
@@ -62,7 +65,9 @@ export default {
       // delete currUser.email
       // console.log('currUser:',currUser)
       userService.login(currUser)
-      console.log('session:',userService.getLoggedInUser())
+      // console.log('session:',userService.getLoggedInUser())
+      this.$store.dispatch({ type: "setCurrUser",currUser })
+      this.$router.push('/')
     },
   },
   components: {},

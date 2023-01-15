@@ -20,7 +20,8 @@
       </div>
       <h1 v-else class="bag-fotter">Bag is empty, start shpooing!</h1>
 
-      <div v-if="totalPrice !== 0" class="chackout-btn">Checkout</div>
+      <div v-if="totalPrice !== 0 && currUser" @click="openWhenLogin" class="chackout-btn">Checkout</div>
+      <div v-else-if="!currUser && totalPrice !== 0" @click="openWhenNoLogin" class="chackout-btn">Checkout</div>
     </el-drawer>
   </section>
 </template>
@@ -28,6 +29,8 @@
 //
 <script>
 import bagItemPreview from "./bag-item-preview.vue"
+import { ElMessage, ElMessageBox } from "element-plus"
+
 export default {
   name: "side-bar",
   // props: { employee: Object },
@@ -42,6 +45,41 @@ export default {
   methods: {
     goToInfoPage() {
       // this.$router.push(`/employee/${this.employee._id}`)
+    },
+    openWhenLogin() {
+      ElMessageBox.alert("This is not a real Commercial site 😁", "Notice", {
+        // if you want to disable its autofocus
+        // autofocus: false,
+        confirmButtonText: "OK, i got it",
+        callback: (action) => {
+          ElMessage({
+            type: "info",
+            message: `action: ${action}`,
+          })
+        },
+      })
+    },
+    openWhenNoLogin() {
+      ElMessageBox.confirm("You need to log in to checkout, Do you want to do it now?", {
+        confirmButtonText: "OK",
+        cancelButtonText: "Cancel",
+        type: "warning",
+      })
+        .then(() => {
+          ElMessage({
+            type: "success",
+            message: "Wear it out 😎",
+          })
+          this.drawer = false
+          this.$router.push("/login")
+        })
+        .catch(() => {
+          this.onAddToBag()
+          ElMessage({
+            type: "info",
+            message: "Continue as a Guest",
+          })
+        })
     },
   },
   mounted() {
@@ -66,6 +104,9 @@ export default {
       if (this.windowWidth < 700) return "100%"
       if (this.windowWidth < 900) return "50%"
       return "30%"
+    },
+    currUser() {
+      return this.$store.getters.currUser
     },
   },
   emits: [""],
