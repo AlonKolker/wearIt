@@ -1,6 +1,6 @@
 <template>
   <div v-if="item" class="item-details">
-    <img class="item-img" src="../assets/image/tshirt1.jpg" alt="" />
+    <img class="item-img" :src=item.img alt="" />
     <div class="item-propertys-left">
       <span class="item-name">{{ item.title }}</span>
       <span class="item-size">Size:</span>

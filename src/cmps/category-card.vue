@@ -1,10 +1,11 @@
 <template>
   <section @click="openCategory()" class="card">
-    <img :src="'src/assets/image/' + category + '.jpg'" alt="" />
+    <img :src="'./public/' + category + '.jpg'" alt="" />
     <div class="card-title">{{ category }}</div>
     <span class="line"></span>
   </section>
 </template>
+<!-- import img1 from "../assets/image/longshirt1.jpg" -->
 
 <script>
 export default {

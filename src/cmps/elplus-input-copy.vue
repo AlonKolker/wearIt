@@ -44,7 +44,8 @@ export default {
         size: this.selectedSize,
         color: this.selectedColor,
         qty: 1,
-        price:+this.item.price
+        price:+this.item.price,
+        img:this.item.img
       }
       this.$store.dispatch({ type: "setBag", item:currItem })
     },
