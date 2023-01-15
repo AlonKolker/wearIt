@@ -1,0 +1,104 @@
+.header-conteiner-background {
+  background-color: black;
+  @media only screen and (max-width: 900px) {
+    position: relative;
+  }
+  .header-conteiner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 30px 0;
+    height: 90px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    .logo {
+      color: white;
+      font-weight: 600;
+      font-size: 30px;
+      cursor: pointer;
+    }
+    .navigation-box {
+      display: flex;
+      flex-direction: row;
+
+      @media only screen and (max-width: 900px) {
+        flex-direction: row-reverse;
+        /* justify-content: flex-end; */
+        align-items: center;
+        gap: 40px;
+        font-size: 30px;
+      }
+
+      .nav {
+        display: flex;
+        flex-grow: 1;
+        justify-content: space-between;
+        margin-inline-end: 30px;
+        align-items: center;
+        @media only screen and (max-width: 900px) {
+          flex-direction: column;
+          background-color: #fff;
+          color: black;
+          width: 100vw;
+          height: 100vh;
+          z-index: 10;
+          align-items: center;
+          position: absolute;
+          left: 0;
+          top: 0;
+          display: none;
+          
+          &.show {
+            display: flex;
+          }
+        }
+        .nav-link {
+          color: white;
+          font-weight: 600;
+          font-size: 22px;
+          cursor: pointer;
+          text-align: center;
+          @media only screen and (max-width: 900px) {
+            color: black;
+          }
+           @media only screen and (max-width: 1000px) {
+            font-size: 18px;
+            
+          }
+        }
+      }
+    }
+  }
+
+  .hamburger {
+    display: none;
+    cursor: pointer;
+    @media only screen and (max-width: 900px) {
+      display: block;
+      color: white;
+      &:hover {
+        color: gray;
+      }
+    }
+  }
+  .closeHamburger {
+    display: none;
+    color: black;
+    z-index: 11;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    @media only screen and (max-width: 900px) {
+      display: none;
+      &.show {
+        display: block;
+      }
+    }
+  }
+}
+
+.menuIcon {
+  color: wheat;
+}
+

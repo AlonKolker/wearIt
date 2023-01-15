@@ -1,0 +1,20 @@
+.sign-login-container{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  .sign-login{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    .el-form-item__label{
+      text-align: center;
+
+    }
+  }
+}

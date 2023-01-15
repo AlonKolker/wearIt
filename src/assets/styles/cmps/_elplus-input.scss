@@ -1,0 +1,17 @@
+.elplus-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: baseline;
+  margin-bottom: 36px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid #aaa;
+  width: 100%;
+  .el-select {
+    width: 100%;
+  }
+  .el-button {
+    width: 100%;
+  }
+}
