@@ -69,6 +69,10 @@ export default {
       userService.login(currUser)
 
       this.$store.dispatch({ type: "setCurrUser", currUser })
+      if (this.lastPath) {
+        this.$router.push(this.lastPath)
+        return
+      }
       this.$router.push("/")
     },
     onRegister() {
@@ -77,7 +81,7 @@ export default {
       userService.login(currUser)
 
       this.$store.dispatch({ type: "setCurrUser", currUser })
-      
+
       if (this.lastPath) {
         this.$router.push(this.lastPath)
         return
