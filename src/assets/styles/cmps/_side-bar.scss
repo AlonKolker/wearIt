@@ -1,16 +1,12 @@
 .side-bar-container {
-  // width: 100%;
   display: flex;
   .side-bar {
-    // padding: 0 30px;
     .item-details {
       display: flex;
       width: 100%;
       justify-content: space-between;
-      // border: 1px solid black;
       background-color: aliceblue;
       margin: 3px 0;
-      // flex-direction: column;
       .item-img {
         width: 80px;
       }
@@ -25,9 +21,6 @@
           font-weight: 600;
           font-size: 20px;
         }
-        // .el-button--danger{
-
-        // }
       }
 
       .item-propertys-right {
@@ -67,6 +60,4 @@
     height: 80%;
     overflow: hidden;
   }
-  
 }
-

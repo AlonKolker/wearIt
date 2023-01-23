@@ -8,10 +8,13 @@
     </el-carousel>
   </div>
 </template>
+
 <script>
+
 import img1 from "../assets/image/longshirt.jpg"
 import img2 from "../assets/image/shos1.jpg"
 import img3 from "../assets/image/tshirt1.jpg"
+
 export default {
   name: "category-carousel",
   data() {
@@ -25,27 +28,4 @@ export default {
 }
 </script>
 
-<style scoped>
-.demonstration {
-  display: flex;
-  flex-direction: column;
-  color: var(--el-text-color-secondary);
-  text-align: center;
-}
 
-.el-carousel__item h3 {
-  color: #475669;
-  opacity: 0.75;
-  line-height: 150px;
-  margin: 0;
-  text-align: center;
-}
-
-.el-carousel__item:nth-child(2n) {
-  background-color: #99a9bf;
-}
-
-.el-carousel__item:nth-child(2n + 1) {
-  background-color: #d3dce6;
-}
-</style>

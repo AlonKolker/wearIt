@@ -5,11 +5,9 @@
         <div class="img-container">
           <img :src="item.img" alt="" />
         </div>
-        <!-- <span>sfsdfsdfsdfsdfsdfsfsdfsdf</span> -->
         <div>
-          <span class="item-title"> {{ item.title }}</span>
+          <span class="item-title"> {{ item.title }} - {{ item.price }}$</span>
           <item-form  :item="item" />
-          <!-- <item-f :cloths="cloths" /> -->
           <description />
         </div>
       </div>
@@ -19,11 +17,12 @@
 </template>
 
 <script>
+
 import categoryCarousel from "../cmps/category-carousel.vue"
 import {shopService} from "../services/shop.service"
-// import itemForm from "../cmps/elplus-input.vue"
-import itemForm from "../cmps/elplus-input-copy.vue"
+import itemForm from "../cmps/elplus-input.vue"
 import description from "../cmps/elplus-description.vue"
+
 export default {
   name: "category",
   data() {
@@ -33,7 +32,6 @@ export default {
     }
   },
   created() {
-    // console.log(this.$route.params.id);
     let id = this.$route.params.id
     this.item = shopService.getItemById(id)[0]
     console.log(this.item)

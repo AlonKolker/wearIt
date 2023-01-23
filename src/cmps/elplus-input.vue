@@ -1,61 +1,92 @@
 <template>
   <section class="elplus-input-container">
+    <el-select v-model="selectedFit" class="m-2" placeholder="Choose fit" size="large">
+      <el-option v-for="(fit, idx) in item.fit" :key="idx" :fit="fit" :value="fit" />
+    </el-select>
 
-    <el-select
-    v-model="value"
-    multiple
-    filterable
-    allow-create
-    default-first-option
-    :reserve-keyword="false"
-    placeholder="Choose fit"
-  >
-    <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value" />
-  </el-select>
-  <el-select
-    v-model="value"
-    multiple
-    filterable
-    allow-create
-    default-first-option
-    :reserve-keyword="false"
-    placeholder="Choose color"
-  >
-    <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value" />
-  </el-select>
-  <el-select
-    v-model="value"
-    multiple
-    filterable
-    allow-create
-    default-first-option
-    :reserve-keyword="false"
-    placeholder="Choose size"
+    <el-select v-model="selectedColor" class="m-2" placeholder="Choose color" size="large">
+      <el-option v-for="(color, idx) in item.colors" :key="idx" :color="color" :value="color" />
+    </el-select>
+
+    <el-select v-model="selectedSize" class="m-2" placeholder="Choose size" size="large">
+      <el-option v-for="(size, idx) in item.sizes" :key="idx" :color="size" :value="size" />
+    </el-select>
+
+    <el-button
+      v-if="currUser"
+      :disabled="!selectedFit || !selectedSize || !selectedColor"
+      :title="check"
+      @click="onAddToBag"
+      type="success"
+      >Add to bag</el-button
     >
-    <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value" />
-  </el-select>
-  <el-button type="success">Add to bag</el-button>
-
-</section>
+    <el-button v-else type="success" :disabled="!selectedFit || !selectedSize || !selectedColor" :title="check" @click="openMsg"
+      >Add to bag</el-button
+    >
+  </section>
 </template>
 
-<script lang="ts" setup>
-import { ref } from "vue"
+<script>
+import { shopService } from "../services/shop.service"
+import { ElMessage, ElMessageBox } from "element-plus"
 
-const value = ref<string[]>([])
-const options = [
-  {
-    value: "HTML",
-    label: "HTML",
+export default {
+  name: "",
+  data() {
+    return {
+      selectedFit: "",
+      selectedSize: null,
+      selectedColor: null,
+    }
   },
-  {
-    value: "CSS",
-    label: "CSS",
+  props: { item: Object },
+  created() {},
+  methods: {
+    onAddToBag() {
+      let currItem = {
+        bagId: shopService.makeId(),
+        id: this.item._id,
+        fit: this.selectedFit,
+        size: this.selectedSize,
+        color: this.selectedColor,
+        qty: 1,
+        price: +this.item.price,
+        img: this.item.img,
+      }
+      this.$store.dispatch({ type: "setBag", item: currItem })
+    },
+    openMsg() {
+      ElMessageBox.confirm("You can Add to bag, but for checkout you will need to log in. Do you want to do it now?", {
+        confirmButtonText: "OK",
+        cancelButtonText: "Cancel",
+        type: "warning",
+      })
+        .then(() => {
+          ElMessage({
+            type: "success",
+            message: "Wear it out 😎",
+          })
+          this.$router.push("/login")
+        })
+        .catch(() => {
+          this.onAddToBag()
+          ElMessage({
+            type: "info",
+            message: "Continue as a Guest",
+          })
+        })
+    },
   },
-  {
-    value: "JavaScript",
-    label: "JavaScript",
+  computed: {
+    currUser() {
+      return this.$store.getters.currUser
+    },
+    check() {
+      if (!this.selectedFit || !this.selectedSize || !this.selectedColor) return "Pleac select empty fields"
+      return "Add to bag"
+    },
   },
-]
+  emits: [""],
+  components: {},
+}
 </script>
-

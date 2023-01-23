@@ -1,10 +1,11 @@
 <template>
   <section class="item-card-list">
-    <item-card-preview v-for="item in items" :item="item"/>
+    <item-card-preview v-for="item in items" :item="item" />
   </section>
 </template>
 
 <script>
+
 import itemCardPreview from "../cmps/item-card-preview.vue"
 
 export default {

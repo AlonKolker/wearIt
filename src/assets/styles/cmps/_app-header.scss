@@ -23,7 +23,6 @@
 
       @media only screen and (max-width: 900px) {
         flex-direction: row-reverse;
-        /* justify-content: flex-end; */
         align-items: center;
         gap: 40px;
         font-size: 30px;
@@ -68,18 +67,20 @@
           justify-items: center;
           display: flex;
           height: 100%;
-          &:hover{
-text-decoration: underline;    }
-      @media only screen and (max-width: 900px) {
+          &:hover {
+            text-decoration: underline;
+          }
+          @media only screen and (max-width: 900px) {
             color: black;
+            font-size: 40px;
+
             &:hover {
               box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
               width: 100%;
             }
           }
           @media only screen and (max-width: 1000px) {
-            font-size: 40px;
-            // font-size: 18px;
+            font-size: 18px;
           }
         }
       }

@@ -3,19 +3,22 @@
     <div class="sign-login">
       <div style="margin: 20px" />
       <el-form label-position="top" label-width="100px" style="max-width: 460px">
-        <el-form-item label="Name">
+        <el-form-item v-if="!isLogin" label="Name">
           <el-input v-model="user.name" />
+        </el-form-item>
+        <el-form-item label="E-mail">
+          <el-input v-model="user.email" />
         </el-form-item>
         <el-form-item label="Password">
           <el-input v-model="user.passWord" />
         </el-form-item>
-        <el-form-item v-if="!isLogin" label="E-mail">
-          <el-input v-model="user.email" />
-        </el-form-item>
-        <div v-if="missingField">Please Fill the empty fields</div>
       </el-form>
-      <el-button v-if="isLogin" @click="onLogIn" :disabled="!user.name || !user.passWord" :title="check" type="primary">Login</el-button>
-      <el-button v-else  :disabled="!user.name || !user.passWord || !user.email " type="primary">Register</el-button>
+      <el-button v-if="isLogin" @click="onLogIn" :disabled="!user.email || !user.passWord" :title="check" type="primary"
+        >Login</el-button
+      >
+      <el-button v-else @click="onRegister" :disabled="!user.name || !user.passWord || !user.email" :title="check" type="primary"
+        >Register</el-button
+      >
     </div>
     <span v-if="isLogin">Dont have an account? <button @click="isLogin = !isLogin">Register!</button></span>
     <span v-else>Have an account? <button @click="isLogin = !isLogin">Login!</button></span>
@@ -23,8 +26,8 @@
 </template>
 
 <script>
-// import categoryCard from '../cmps/category-card.vue'
 import { userService } from "../services/user.service"
+
 export default {
   name: "sign-login",
   data() {
@@ -35,39 +38,51 @@ export default {
         email: "",
       },
       isLogin: true,
-      missingField: false,
+      lastPath: null,
     }
   },
-  computed: {check(){
-    if(!this.user.name || !this.user.passWord) return 'Please fill the missing fields'
-     return 'Enter'
-  }},
+  created() {
+    this.lastPath = this.$router.options.history.state.back
+    console.log(this.lastPath)
+  },
+  computed: {
+    check() {
+      if (this.isLogin) {
+        if (!this.user.name || !this.user.passWord) return "Please fill the missing fields"
+        return "Enter"
+      } else {
+        if (!this.user.name || !this.user.passWord || !this.user.email) return "Please fill the missing fields"
+        return "Enter"
+      }
+    },
+  },
   methods: {
     onLogIn() {
-      console.log('onLogIn',this.user)
-      // let isDone = true
-      // for (const property in this.user) {
-      //   if(property === 'email') return 
-      //   isDone = this.user[property] === "" ? false : true
-      //   if (!isDone) {
-      //     this.missingField = true
-      //     return
-      //   }
-      // }
-      // if (this.missingField) {
-      //   console.log("missingField:", this.missingField)
-      //   return
-      // }
-      console.log('onLogIn',this.user)
-
-      this.missingField = false
       let currUser = this.user
-      // delete currUser.email
-      // console.log('currUser:',currUser)
+
+      let users = this.$store.getters.users
+
+      let isVerify = users.some((user) => user.email === currUser.email)
+
+      if (!isVerify) return
+
       userService.login(currUser)
-      // console.log('session:',userService.getLoggedInUser())
-      this.$store.dispatch({ type: "setCurrUser",currUser })
-      this.$router.push('/')
+
+      this.$store.dispatch({ type: "setCurrUser", currUser })
+      this.$router.push("/")
+    },
+    onRegister() {
+      let currUser = this.user
+
+      userService.login(currUser)
+
+      this.$store.dispatch({ type: "setCurrUser", currUser })
+      
+      if (this.lastPath) {
+        this.$router.push(this.lastPath)
+        return
+      }
+      this.$router.push("/")
     },
   },
   components: {},

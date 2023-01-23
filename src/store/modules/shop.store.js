@@ -5,11 +5,10 @@ export const shopStore = {
     cloths: [],
     bag: [],
     bagTotalPrice: 0,
-    currUser:null,
+    currUser: null,
+    users: [{ email: "alonkolk@gmail.com" }],
     filter: "",
   },
-  category: "shirts",
-
   getters: {
     shirts({ cloths }) {
       return cloths.filter((c) => c.category === "shirts")
@@ -18,10 +17,10 @@ export const shopStore = {
       return cloths.filter((c) => c.category === "pants")
     },
     shoes({ cloths }) {
-      return cloths
+      return cloths.filter((c) => c.category === "shoes")
     },
-    accseories({ cloths }) {
-      return cloths
+    accsesories({ cloths }) {
+      return cloths.filter((c) => c.category === "accseories")
     },
     bag({ bag }) {
       return bag
@@ -31,6 +30,9 @@ export const shopStore = {
     },
     currUser({ currUser }) {
       return currUser
+    },
+    users({ users }) {
+      return users
     },
   },
   mutations: {
@@ -54,16 +56,15 @@ export const shopStore = {
     },
     setCurrUser(state, { currUser }) {
       state.currUser = currUser
-      console.log(state.currUser);
+      console.log(state.currUser)
     },
-    setFilter(state, { text }) {
+    verifyUser(state, { currUser }) {
       state.filter = text
     },
   },
   actions: {
     async loadClothes({ commit, state }) {
       try {
-        // const clothes = await employeeService.query(state.filter)
         const cloths = await shopService.query()
         commit({ type: "setCloths", cloths })
       } catch (err) {
@@ -73,18 +74,16 @@ export const shopStore = {
     },
 
     setBag({ commit }, { item }) {
-      // console.log(item)
       commit({ type: "updateBag", item })
     },
     setCurrUser({ commit }, { currUser }) {
       commit({ type: "setCurrUser", currUser })
     },
 
-    setFilter({ commit }, { text }) {
-      commit({ type: "setFilter", text })
+    verifyUser({ commit }, { currUser }) {
+      commit({ type: "verifyUser", currUser })
     },
-        removeBagItem({ commit }, { bagId }) {
-      // console.log(itemId)
+    removeBagItem({ commit }, { bagId }) {
       commit({ type: "removeBagItem", bagId })
     },
   },

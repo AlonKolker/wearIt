@@ -26,14 +26,12 @@
   </section>
 </template>
 
-//
 <script>
 import bagItemPreview from "./bag-item-preview.vue"
 import { ElMessage, ElMessageBox } from "element-plus"
 
 export default {
   name: "side-bar",
-  // props: { employee: Object },
   data() {
     return {
       drawer: false,
@@ -43,9 +41,6 @@ export default {
   created() {},
 
   methods: {
-    goToInfoPage() {
-      // this.$router.push(`/employee/${this.employee._id}`)
-    },
     openWhenLogin() {
       ElMessageBox.alert("This is not a real Commercial site 😁", "Notice", {
         // if you want to disable its autofocus
@@ -113,21 +108,3 @@ export default {
   components: { bagItemPreview },
 }
 </script>
-
-<!-- <script lang="ts" setup>
-import { ref } from 'vue'
-import { ElMessageBox } from 'element-plus'
-
-const drawer = ref(false)
-const innerDrawer = ref(false)
-
-const handleClose = (done: () => void) => {
-  ElMessageBox.confirm('You still have unsaved data, proceed?')
-    .then(() => {
-      done()
-    })
-    .catch(() => {
-      // catch error
-    })
-}
-</script> -->
